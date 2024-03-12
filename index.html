@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>PNJ</title>
+    <link rel="icon" type="image/png" href="images/Icon.webp">
+</head>
+<body>
+    <!-- đây là phần quảng cáo  -->
+    <div id="overlay-ad" class="overlay">
+        <img src="images/pnj.png" alt="Quảng Cáo" class="ad-image">
+        <button onclick="closeAd()">Đóng</button>
+    </div>
+    <script>
+        function closeAd() {
+            document.getElementById('overlay-ad').style.display = 'none';
+}
+    </script>
+    <header>
+        <div class = "logo">
+            <img src="images/pnj.com.vn.png" alt="">
+        </div>
+        <div class="menu">
+            <li> <a href="">Trang Sức</a></li>
+            <li> <a href="">Trang Sức Cưới</a></li>
+            <li> <a href="">Đồng Hồ</a></li>
+            <li> <a href="">Quà Tặng</a></li>
+            <li> <a href="">Bộ Sưu Tập</a></li>
+        </div>
+        <div class = "anything">
+            <li><input placeholder="Quà tặng 8/3" type="text"> <i class="fas fa-search"></i></li>
+            <li> <a class="fa fa-paw" href=""></a></li>
+            <li> <a class="fa fa-user"></a></li>
+            <li> <a class="fa fa-shopping-bag" href=""></a></li>
+        </div>
+    </header>
+    <section id="slider">
+        <div class="aspect-ratio-169">
+            <img src="images/slide1.png" alt="Slide 1">
+            <img src="images/slide2.png" alt="Slide 2">
+            <img src="images/slide3.jpg" alt="Slide 3">
+            <img src="images/slide4.jpg" alt="Slide 4">
+            <img src="images/slide5.jpg" alt="Slide 5">
+        </div>
+    </section>
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <script>
+        // Biến toàn cục để giữ vị trí hiện tại của slide
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.aspect-ratio-169 img');
+        const imgContainer = document.querySelector('.aspect-ratio-169');
+        const imgNumber = slides.length;
+        const dots = document.querySelectorAll('.dot');
+        
+        function imgSlide() {
+            // Xử lý khi đạt đến slide cuối cùng
+            if (currentIndex >= imgNumber) {
+                currentIndex = 0;
+            }
+            // Cập nhật vị trí của slide
+            imgContainer.style.left = "-" + currentIndex * 100 + "%";
+            setActiveDot();
+            // Chuẩn bị index cho lần chuyển slide tiếp theo
+            currentIndex++;
+        }
+    
+        function setActiveDot() {
+            // Loại bỏ trạng thái 'active' của tất cả dots
+            dots.forEach(dot => dot.classList.remove('active'));
+            // Thêm trạng thái 'active' cho dot hiện tại
+            dots[currentIndex].classList.add('active');
+        }
+    
+        function currentSlide(n) {
+            // Đặt currentIndex để phản ánh dot được chọn (đánh số từ 0)
+            currentIndex = n - 1;
+            // Cập nhật slide và dots ngay lập tức
+            imgSlide();
+        }
+    
+        // Khởi tạo trạng thái ban đầu của slide và dots
+        imgSlide();
+    
+        // Thiết lập interval để tự động chuyển slide
+        setInterval(imgSlide, 5000);
+    </script>
+ <div class="ad-container">
+    <div class="ad-item">
+      <img src="images/bst/8March_fix_banner_CTA_.jpg" alt="Ad Image">
+    </div>
+    <div class="ad-item">
+      <img src="images/bst/bst-sunnyva-fix-banner-494x247.jpg" alt="Ad Image">
+    </div>
+    <div class="ad-item">
+      <img src="images/bst/qua-tang-fix-1-494x247CTA.jpg" alt="Ad Image">
+    </div>
+  </div>
+  <div class="container">
+    <!-- Repeat this block for each image -->
+    <div class="image-container">
+      <img src="images/BANNER/BANNER-WEB_Style_LuckyMe_1200x1200-nocta.jpg" alt="Your Image">
+      <div class="info-div">
+        <p><img src="images/BANNER/style-logo_1.svg" alt="Your Logo"></p>
+      </div>
+    </div>
+    <!-- Repeat until all images are included -->
+    <div class="image-container">
+      <img src="images/BANNER/Banner_BST_Shinning_Princess_KV_1200x1200_240229__1_.jpg" alt="Your Image">
+      <div class="info-div">
+        <p><img src="images/BANNER/pnj disney-01.png" alt="Your Logo"></p>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="images/BANNER/sanrio-t3-1200x1200.png" alt="Your Image">
+      <div class="info-div">
+        <p><img src="images/BANNER/sanrio1.svg" alt="Your Logo"></p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <footer class="footer">
+    <div class="footer-logo">
+      <img src="images/pnj.com.vn.png" alt="Company Logo">
+      <p>© 2017 Công Ty Cổ Phần Vàng Bạc Đá Quý Phú Nhuận</p>
+      <p>170E Phan Đăng Lưu, P.3, Q.Phú Nhuận, TP.Hồ Chí Minh</p>
+      <p>Giấy chứng nhận đăng ký doanh nghiệp: 0300521758 do Sở Kế hoạch & Đầu tư TP.HCM cấp lần đầu ngày 02/01/2004. Ngành, nghề kinh doanh</p>
+      <p>Tổng đài hỗ trợ (08:00-21:00, miễn phí gọi)</p>
+      <p>Gọi mua: 1800545457 (phím 1)</p> 
+      <p>Khiếu nại: 1800545457 (phím 2)</p> 
+    </div>
+    <div class="footer-column">
+      <h3>VỀ PNJ</h3>
+      <ul>
+      <li><a href="#">Câu chuyện PNJ</a></li>  
+      <li><a href="#">Tuyển dụng</a></li>
+      <li> <a href="#">Xuất khẩu</a></li> 
+      <li><a href="#">Kinh doanh kim cương</a></li> 
+      <li><a href="#">Kinh doanh vàng bạc</a></li>
+      </ul>
+  
+      <!-- Add all the other links here -->
+    </div>
+    <div class="footer-column">
+      <h3>DỊCH VỤ KHÁCH HÀNG</h3>
+      <!-- Add all the customer service links here -->
+      <ul>
+      <li><a href="#">Hướng dẫn đo size trang sức</a></li>  
+      <li> <a href="#">Mua hàng trả góp</a></li>
+      <li><a href="#">Hướng dẫn mua hàng và thanh toán</a></li>
+      <li><a href="#">Cẩm nang sử dụng trang sức</a></li>
+      <li><a href="#">Câu hỏi thường gặp</a></li>
+      </ul>
+  
+    </div>
+    <div class="footer-column">
+      <h3>CHÍNH SÁCH</h3>
+      <!-- Add all the policy links here -->
+      <ul>
+      <li><a href="#">Chính sách hoàn tiền</a></li>  
+      <li><a href="#">Chính sách giao hàng</a></li> 
+      <li><a href="#">Chính sách bảo hành thu đổi</a></li>
+      <li><a href="#">Chính sách khách hàng thân thiết</a></li>
+      <li> <a href="#">Chính sách bảo mật thông tin khách hàng</a></li>
+      <li><a href="#">Chính sách xử lý dữ liệu cá nhân</a></li>
+      </ul>
+  
+    </div>
+    <div class="footer-column">
+      <h3>KẾT NỐI VỚI CHÚNG TÔI</h3>
+      <div class="social-icons">
+        <!-- Add all social media icons here -->
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
